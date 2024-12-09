@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'SF_HambakSnow';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    font-family: 'SF_HambakSnow', sans-serif; /* sans-serif를 백업 폰트로 추가 */
+    margin: 0; /* 기본 여백 제거 (선택 사항) */
+    padding: 0; /* 기본 여백 제거 (선택 사항) */
+    font-size:16px; /* 기준 크기 */
+    overflow: hidden;
+}
+
+.container-fluid {
+    max-width: 600px; /* 모바일과 유사한 너비 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+.main-container {
+    padding: 1.25rem 1.25rem 0 1.25rem;
+}
+.sub-container {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .main-container {
+        padding: 1.25rem;
+        font-size: 3rem;
+    }
+    .sub-container {
+        padding: 1.25rem;
+        font-size: 2rem;
+    }
+}
+
+.font-size-b {
+    font-size: 5rem;
+}
+
+.font-size-m {
+    font-size: 4rem;
+}
+
+.font-size-s {
+    font-size: 3rem;
+}
+
+#confetti-canvas {
+    position: absolute;
+    pointer-events: none; /* 사용자 이벤트 차단 */
+    z-index: 10;
+}
+
+
