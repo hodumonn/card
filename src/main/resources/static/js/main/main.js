@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const setVh = () => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    setVh();
+    window.addEventListener('resize', setVh);
+
     // <canvas> 요소 선택
     const canvas = document.getElementById('confetti-canvas');
     const targetRow = document.getElementById('confetti-row'); // row 선택
@@ -36,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         intervalId = setTimeout(repeatConfetti, 1000);
         setTimeout(() => {
             clearInterval(intervalId);  // 중지
-        }, 10000); // 10초
+        }, 5000); // 5초
     };
 
     repeatConfetti();

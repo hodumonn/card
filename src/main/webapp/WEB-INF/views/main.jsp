@@ -28,9 +28,50 @@
     <div class="row" id="confetti-row">
         <!-- 모바일처럼 보이게 하려면 col-12만 사용 -->
         <div class="col-12 font-size-b main-container">2025년</div>
-        <div class="col-12 font-size-b sub-container">을사년</div>
-        <div class="col-12 font-size-m sub-container">어서오세요.</div>
+        <div class="col-12 font-size-b sub-container">나야,</div>
+        <div class="col-12 font-size-b sub-container" style="color: #4ABFD3;">을사년.</div>
+        <div class="col-12" style="margin-top: 20px; margin-bottom: 20px;"></div>
+        <div class="col-12 font-size-m sub-container">청용의 해</div>
+        <div class="col-12 font-size-m sub-container">반드시</div>
+        <div class="col-12 font-size-m sub-container">큰거온다.</div>
+        <div class="col-12 font-size-s sub-container">히주 님이 보내신</div>
+        <div class="col-12 font-size-s sub-container">메세지를 확인해보세요.</div>
+        <div class="col-12 font-size-s sub-container text-center">⬇️📮</div>
     </div>
+    <%--<div class="row">
+        <div class="col-12">
+            <img src="<c:url value='/img/img1.png' />" alt="2025년 이미지1"/>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        올 한해도 수고했어!ㅋㅋ<br><br>
+                        <p class="text-right">by.호두</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>--%>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <img class="card-img-top" src="<c:url value='/img/img1.png' />" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">올 한해도 수고했어!ㅋㅋ</p>
+                    <br><br>
+                    <p class="text-right">📝by.호두</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+        <button type="button" class="btn btn-outline-primary">공유하기</button>
+        <button type="button" class="btn btn-outline-secondary">나도 만들기</button>
+    </div>
+
     <canvas id="confetti-canvas"></canvas>
 </div>
 <script src="<c:url value='/js/main/main.js' />"></script>
