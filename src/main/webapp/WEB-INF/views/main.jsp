@@ -69,7 +69,7 @@
     </div>
     <div class="row d-flex justify-content-center align-items-center">
         <button type="button" class="btn btn-outline-primary">공유하기</button>
-        <button type="button" class="btn btn-outline-secondary">나도 만들기</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="create();">나도 만들기</button>
     </div>
 
     <canvas id="confetti-canvas"></canvas>

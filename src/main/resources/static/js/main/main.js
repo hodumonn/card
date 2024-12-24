@@ -48,5 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     repeatConfetti();
-});
 
+
+});
+function create(){
+    location.href="/create";
+}
