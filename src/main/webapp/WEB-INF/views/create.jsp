@@ -37,7 +37,7 @@
     <!-- 슬라이드 영역 -->
     <div class="row mb-4">
         <div class="col-12">
-            <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+            <div id="imageCarousel" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row">
@@ -55,13 +55,13 @@
                     <div class="carousel-item">
                         <div class="row">
                             <div class="col-4 mb-2">
-                                <img src="<c:url value='/img/img3.png' />" class="img-thumbnail" alt="Image 4" onclick="selectImage(this)">
+                                <img src="<c:url value='/img/img4.png' />" class="img-thumbnail" alt="Image 4" onclick="selectImage(this)">
                             </div>
                             <div class="col-4 mb-2">
-                                <img src="<c:url value='/img/img2.png' />" class="img-thumbnail" alt="Image 5" onclick="selectImage(this)">
+                                <img src="<c:url value='/img/img5.png' />" class="img-thumbnail" alt="Image 5" onclick="selectImage(this)">
                             </div>
                             <div class="col-4 mb-2">
-                                <img src="<c:url value='/img/img1.png' />" class="img-thumbnail" alt="Image 6" onclick="selectImage(this)">
+                                <img src="<c:url value='/img/img6.png' />" class="img-thumbnail" alt="Image 6" onclick="selectImage(this)">
                             </div>
                         </div>
                     </div>

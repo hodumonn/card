@@ -19,6 +19,9 @@ $(document).ready(function() {
 
    // 캐서럴
    const carousel = $('#imageCarousel');
+   carousel.carousel({
+      interval: false // 자동 슬라이드 비활성화
+   });
 
    // 마우스 드래그 기능 추가
    let isDragging = false;
