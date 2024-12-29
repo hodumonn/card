@@ -17,7 +17,32 @@ $(document).ready(function() {
 
    });
 
+   const emoji = $('#emoji');
 
+   // focus 이벤트
+   emoji.on('focus', () => {
+      console.log('Input field focused.');
+   });
+
+
+   // input 이벤트
+   emoji.on('input', () => {
+      const value = emoji.val(); // jQuery의 .val() 메서드로 값 가져오기
+      const validEmojiRegex = /[\p{Emoji}]/gu;
+      const emojis = value.match(validEmojiRegex) || [];
+
+      // 입력값에 이모지가 아닌 문자가 포함된 경우 제거
+      emoji.val(emojis.join('')); // 유효한 이모지만 남김
+
+      if (!value.match(validEmojiRegex)) {
+         alert("올바른 이모지를 입력하세요");
+         emoji.val(''); // 잘못된 값 초기화
+      }
+
+      if(emojis.length > 5) {
+         emoji.val(emojis.slice(0, 5).join(''));
+      }
+   });
 
    // 캐서럴
    const carousel = $('#imageCarousel');
@@ -52,16 +77,32 @@ $(document).ready(function() {
    });
 
    // 공유하기 버튼
-   $('#kakaotalk-sharing-btn').on('click', () => {
+   $('#kakaotalk-sharing-btn').on('click', (event) => {
       let forms = document.querySelectorAll('.needs-validation');
 
       let img_src = finalSelectImage();
 
       // 각 폼에 대해 검증 실행
       forms.forEach(function(form) {
+         // 이모지 입력 값
+         const emoji = $('#emoji').val();
+         const emojiRegex = /[\p{Emoji}]/gu;
+         const emojis = emoji.match(emojiRegex) || [];
+
+         if(emojis.length !== 5) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            alert("이모지는 5개까지 입력하세요");
+            form.classList.add('was-validated');
+            return;
+         }
+
          if (!form.checkValidity()) {
             form.classList.add('was-validated'); // 부트스트랩 유효성 클래스 추가
          } else {
+
+
             // 유효한 경우 추가 로직 실행 (예: 폼 제출 등)
             $.ajax({
                url: '/create/message',
