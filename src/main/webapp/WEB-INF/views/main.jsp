@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"  %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="ko">
@@ -37,6 +38,7 @@
         <div class="col-12 font-size-s sub-container">${cardVO.nickname} 님이 보내신</div>
         <div class="col-12 font-size-s sub-container">메세지를 확인해보세요.</div>
         <div class="col-12 font-size-s sub-container text-center">⬇️📮</div>
+        <div id="confettiConfig" data-emojis='${cardVO.emoji}'></div>
     </div>
     <%--<div class="row">
         <div class="col-12">
@@ -58,7 +60,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <img class="card-img-top" src="<c:url value='/img/img1.png' />" alt="Card image cap">
+                <img class="card-img-top" src="<c:url value='/img/${cardVO.img_url}' />" alt="Card image cap">
                 <div class="card-body">
                     <p class="card-text">${cardVO.content}</p>
                     <br><br>
@@ -78,7 +80,6 @@
 </body>
 
 <script>
-
 
 
 </script>

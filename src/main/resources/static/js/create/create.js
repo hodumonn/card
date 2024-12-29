@@ -110,7 +110,8 @@ $(document).ready(function() {
                data: {
                   'nickname': $('#nickname').val(),
                   'content': $('#content').val(),
-                  'img_url': img_src
+                  'img_url': img_src,
+                  'emoji': $('#emoji').val()
                },
                dataType: 'json',
                async: false,

@@ -11,6 +11,11 @@ public class CardVO {
     private String img_url;
     @Nullable
     private boolean isSuccess;
+    private String emoji;
+
+    public void setEmoji(String emoji) {this.emoji = emoji;}
+
+    public String getEmoji() {return emoji;}
 
     public void setIsSuccess(boolean isSuccess) {
         this.isSuccess = isSuccess;

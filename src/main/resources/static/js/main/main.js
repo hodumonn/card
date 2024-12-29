@@ -31,10 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // 콘페티 애니메이션 실행 핸들러
     let intervalId;
 
+    const confettiConfig = document.getElementById("confettiConfig");
+    const emojis = confettiConfig.dataset.emojis;
+    console.log(emojis, '임조');
+
+    const emojiArray = [];
+    for (const emoji of emojis) {
+        emojiArray.push(emoji); // 유니코드 문자 분리
+    }
+
     // 콘페티 실행
     const repeatConfetti = () => {
         jsConfetti.addConfetti({
-            emojis: ["💌", "🐲", "⭐", "🐉", "👨🏻‍🦲"], // 사용할 이모지
+            emojis: emojiArray, // 사용할 이모지(set 해주기)
             emojiSize: 100, // 이모지 크기
             confettiNumber: 70, // 콘페티 개수
             position: {x: centerX, y: centerY}, // row 중앙 시작

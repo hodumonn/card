@@ -59,6 +59,8 @@ public class CardController {
     @ResponseBody
     public CardVO createMessage(@ModelAttribute CardVO cardVO) {
 
+        System.out.println(cardVO.getEmoji());
+
         int idx = cardService.createMessage(cardVO);
         System.out.println("생성된 PK (idx): " + idx);
         if (idx < 1) {
