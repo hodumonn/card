@@ -34,7 +34,7 @@
         <div class="col-12 font-size-m sub-container">청용의 해</div>
         <div class="col-12 font-size-m sub-container">반드시</div>
         <div class="col-12 font-size-m sub-container">큰거온다.</div>
-        <div class="col-12 font-size-s sub-container">히주 님이 보내신</div>
+        <div class="col-12 font-size-s sub-container">${cardVO.nickname} 님이 보내신</div>
         <div class="col-12 font-size-s sub-container">메세지를 확인해보세요.</div>
         <div class="col-12 font-size-s sub-container text-center">⬇️📮</div>
     </div>
@@ -60,15 +60,15 @@
             <div class="card">
                 <img class="card-img-top" src="<c:url value='/img/img1.png' />" alt="Card image cap">
                 <div class="card-body">
-                    <p class="card-text">올 한해도 수고했어!ㅋㅋ</p>
+                    <p class="card-text">${cardVO.content}</p>
                     <br><br>
-                    <p class="text-right">📝by.호두</p>
+                    <p class="text-right">📝by.${cardVO.nickname}</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="row d-flex justify-content-center align-items-center">
-        <button type="button" class="btn btn-outline-primary">공유하기</button>
+<%--        <button type="button" class="btn btn-outline-primary">공유하기</button>--%>
         <button type="button" class="btn btn-outline-secondary" onclick="create();">나도 만들기</button>
     </div>
 
@@ -76,4 +76,11 @@
 </div>
 <script src="<c:url value='/js/main/main.js' />"></script>
 </body>
+
+<script>
+
+
+
+</script>
+
 </html>

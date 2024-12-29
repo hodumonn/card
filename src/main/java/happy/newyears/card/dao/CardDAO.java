@@ -1,12 +1,15 @@
 package happy.newyears.card.dao;
 
-import happy.newyears.card.vo.ImageVO;
+import happy.newyears.card.vo.CardVO;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.awt.font.ImageGraphicAttribute;
 import java.util.List;
 
 @Mapper
 public interface CardDAO {
-    List<ImageVO> selectImg();
+    List<CardVO> selectImg();
+
+    int createMessage(CardVO cardVO);
+
+    CardVO getCard(int cardId);
 }

@@ -20,8 +20,14 @@
     <script src="<c:url value='/js/bootstrap.min.js' />"></script>
     <script src="<c:url value='/js/bootstrap.bundle.min.js' />"></script>
     <script src="<c:url value='/js/create/create.js' />"></script>
+    <!-- 카카오 공유 api -->
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js"
+            integrity="sha384-DKYJZ8NLiK8MN4/C5P2dtSmLQ4KwPaoqAfyA/DfmEc1VDxu4yyC7wy6K1Hs90nka" crossorigin="anonymous"></script>
     <title>2025 Card</title>
 </head>
+<script>
+    Kakao.init('99e069bb6b6e6d86e159b0a3361a7ef4'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
 <body>
 
 <div class="container-fluid">
@@ -94,8 +100,10 @@
                     <div id="charCount" class="text-muted text-right">0 / 1000자</div>
                     <div class="invalid-feedback">내용을 입력해주세요.</div>
                 </div>
-                <div class="text-center">
-                    <button type="button" class="btn btn-outline-primary" id="share_btn">공유하기</button>
+                <div class="text-center d-flex flex-column align-items-center">
+                    <a id="kakaotalk-sharing-btn">
+                        <button type="button" class="btn btn-outline-primary" id="share_btn">공유하기</button>
+                    </a>
                 </div>
             </form>
         </div>
@@ -103,4 +111,7 @@
 </div>
 
 </body>
+<script>
+
+</script>
 </html>

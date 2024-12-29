@@ -3,7 +3,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="happy.newyears.card.dao.CardDAO">
-    <select id="selectImg" resultType="happy.newyears.card.vo.ImageVO">
-        SELECT * FROM IMAGE
+    <select id="selectImg" resultType="happy.newyears.card.vo.CardVO">
+        SELECT * FROM card
+    </select>
+
+    <insert id="createMessage"
+            useGeneratedKeys="true"
+            keyProperty="idx"
+            parameterType="happy.newyears.card.vo.CardVO">
+        INSERT INTO card (nickname, content, img_url)
+            VALUES (#{nickname}, #{content}, #{img_url}) RETURNING idx
+
+    </insert>
+
+    <select id="getCard" resultType="happy.newyears.card.vo.CardVO" parameterType="int">
+        select nickname, content, img_url from card where idx = #{idx}
     </select>
 </mapper>
