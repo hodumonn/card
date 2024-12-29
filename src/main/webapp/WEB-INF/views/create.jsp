@@ -89,6 +89,11 @@
                     <div class="invalid-feedback">이름/닉네임을 입력해주세요.</div>
                 </div>
                 <div class="form-group">
+                    <label for="emoji">이모지(5개)</label>
+                    <input type="text" class="form-control" id="emoji" placeholder="이모지를 5개 선택해주세요." required>
+                    <div class="invalid-feedback">이모지 5개를 선택해주세요.</div>
+                </div>
+                <div class="form-group">
                     <label for="content">내용</label>
                     <textarea class="form-control" id="content" rows="5" placeholder="내용을 입력해주세요." required></textarea>
                     <div id="charCount" class="text-muted text-right">0 / 1000자</div>
