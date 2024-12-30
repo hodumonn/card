@@ -126,7 +126,7 @@ $(document).ready(function() {
                   console.log(res);
                   if(res.isSuccess){
                      console.log("dd");
-                     shareMessage(res.idx); // 카카오 공유하기 함수 실행
+                     shareMessage(res.url); // 카카오 공유하기 함수 실행
                   }
                }),
                error: ((xhr, status, err) => {
@@ -138,11 +138,11 @@ $(document).ready(function() {
    });
 });
 
-function shareMessage(idx) {
-   // const baseUrl = 'http://localhost:8084'; // 등록된 도메인
+function shareMessage(url) {
+   //const baseUrl = 'http://localhost:8084'; // 등록된 도메인
    const baseUrl = 'http://happy-newyears.kro.kr';
-   const fullUrl = `${baseUrl}/${idx}`; // 쿼리 파라미터 추가
-   console.log(idx);
+   const fullUrl = `${baseUrl}/${url}`; // 쿼리 파라미터 추가
+   console.log(url);
    console.log(fullUrl);
     Kakao.Share.sendDefault({
     objectType: 'text',

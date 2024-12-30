@@ -12,6 +12,12 @@ public class CardVO {
     @Nullable
     private boolean isSuccess;
     private String emoji;
+    @Nullable
+    private String url;
+
+    public void setUrl(String url) {this.url = url;}
+
+    public String getUrl() {return url;}
 
     public void setEmoji(String emoji) {this.emoji = emoji;}
 

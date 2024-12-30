@@ -11,12 +11,12 @@
             useGeneratedKeys="true"
             keyProperty="idx"
             parameterType="happy.newyears.card.vo.CardVO">
-        INSERT INTO card (nickname, content, img_url, emoji)
-            VALUES (#{nickname}, #{content}, #{img_url}, #{emoji}) RETURNING idx
+        INSERT INTO card (nickname, content, img_url, emoji, url)
+            VALUES (#{nickname}, #{content}, #{img_url}, #{emoji}, #{url}) RETURNING idx
 
     </insert>
 
-    <select id="getCard" resultType="happy.newyears.card.vo.CardVO" parameterType="int">
-        select nickname, content, img_url, emoji from card where idx = #{idx}
+    <select id="getCard" resultType="happy.newyears.card.vo.CardVO" parameterType="String">
+        select nickname, content, img_url, emoji from card where url = #{url}
     </select>
 </mapper>

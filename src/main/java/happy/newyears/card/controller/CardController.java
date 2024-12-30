@@ -32,11 +32,11 @@ public class CardController {
      * 메인 (카드 확인) 화면
      * @return
      */
-    @GetMapping(value="/{idx}")
-    public ModelAndView mainView(@PathVariable int idx) {
+    @GetMapping(value="/{url}")
+    public ModelAndView mainView(@PathVariable String url) {
 
         ModelAndView mav = new ModelAndView();
-        mav.addObject("cardVO", cardService.getCard(idx));
+        mav.addObject("cardVO", cardService.getCard(url));
         mav.setViewName("main");
 
         return mav;
@@ -66,12 +66,12 @@ public class CardController {
 
         System.out.println(cardVO.getEmoji());
 
-        int idx = cardService.createMessage(cardVO);
-        System.out.println("생성된 PK (idx): " + idx);
-        if (idx < 1) {
+        String url = cardService.createMessage(cardVO);
+        System.out.println("생성된 UUID (idx): " + url);
+        if (url.length() < 1) {
             cardVO.setIsSuccess(false);
         }
-        cardVO.setIdx(idx);
+        cardVO.setUrl(url);
         cardVO.setIsSuccess(true);
 
         return cardVO;

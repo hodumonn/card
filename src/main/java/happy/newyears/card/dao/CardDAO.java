@@ -11,5 +11,5 @@ public interface CardDAO {
 
     int createMessage(CardVO cardVO);
 
-    CardVO getCard(int cardId);
+    CardVO getCard(String url);
 }

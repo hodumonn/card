@@ -6,6 +6,8 @@ import happy.newyears.card.vo.CardVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class CardServiceImpl implements CardService {
 
@@ -13,24 +15,33 @@ public class CardServiceImpl implements CardService {
     CardDAO cardDAO;
 
     @Override
-    public int createMessage(CardVO cardVO) {
+    public String createMessage(CardVO cardVO) {
+
+        UUID uuid = UUID.randomUUID();
+        cardVO.setUrl(uuid.toString());
+
         int rowsAffected = cardDAO.createMessage(cardVO); // INSERT 실행
         System.out.println("생성된 PK (idx): " + rowsAffected);
         System.out.println("생성된 PK (idx): " + cardVO.getIdx()); // 자동 매핑된 키 값 확인
-        return cardVO.getIdx(); // 자동 생성된 PK 반환
+
+        if(rowsAffected < 1){
+            return null;
+        }
+
+        return cardVO.getUrl(); // 자동 생성된 PK 반환
     }
 
     @Override
-    public CardVO getCard(int cardId) {
+    public CardVO getCard(String url) {
 
         CardVO cardVO = new CardVO();
 
-        if(cardId < 1){
+        if(url.length() < 1){
             cardVO.setIsSuccess(false);
             return cardVO;
         }
 
-        cardVO = cardDAO.getCard(cardId);
+        cardVO = cardDAO.getCard(url);
 
         return cardVO;
     }
