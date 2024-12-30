@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'war'
+    id 'war' // JSP를 포함한 배포를 위해 WAR로 빌드 설정
     id 'org.springframework.boot' version '3.3.4'
     id 'io.spring.dependency-management' version '1.1.6'
 }
@@ -20,21 +20,46 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    implementation  'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
+    // JSP 및 JSTL 관련 의존성
+//    implementation 'javax.servlet:jstl:1.2' // JSTL
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.30' // Tomcat JSP 엔진
+
+    // Jakarta 및 JSTL 구현체 (JSP, JSTL 문제 해결)
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.2'
     implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
-    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.28'
 
+    // PostgreSQL 드라이버
     implementation 'org.postgresql:postgresql:42.7.2'
+
+    // MyBatis
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
-
-
-
 }
-
 tasks.named('test') {
     useJUnitPlatform()
 }
+// WAR 빌드 설정
+//tasks.named('war') {
+//    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+//    archiveFileName = 'card.war'
+//}
+//
+//tasks.named('bootWar') {
+//    enabled = true
+//    archiveFileName = 'card.war'
+//}
+//
+//// bootJar 비활성화 (Spring Boot WAR 빌드 시 사용하지 않음)
+//tasks.named('bootJar') {
+//    enabled = false
+//}
+//
+//// JAR 빌드 비활성화
+//tasks.named('jar') {
+//    enabled = true
+//}
+//
+//

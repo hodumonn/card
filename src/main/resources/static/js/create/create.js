@@ -85,22 +85,29 @@ $(document).ready(function() {
       // 각 폼에 대해 검증 실행
       forms.forEach(function(form) {
          // 이모지 입력 값
-         const emoji = $('#emoji').val();
-         const emojiRegex = /[\p{Emoji}]/gu;
-         const emojis = emoji.match(emojiRegex) || [];
+         const emojiInput = $('#emoji'); // 이모지 입력 필드
+         const emojiValue = emojiInput.val(); // 입력된 값
+         const emojiRegex = /[\p{Emoji}]/gu; // 이모지 정규식
+         const emojis = emojiValue.match(emojiRegex) || []; // 이모지 배열
 
-         if(emojis.length !== 5) {
+         // 이모지가 5개인지 확인
+         if (emojis.length !== 5) {
             event.preventDefault();
             event.stopPropagation();
 
-            alert("이모지는 5개까지 입력하세요");
-            form.classList.add('was-validated');
-            return;
+            emojiInput.get(0).setCustomValidity("이모지는 5개까지 입력하세요."); // HTML5 검증 메시지 설정
+         } else {
+            emojiInput.get(0).setCustomValidity(""); // 검증 메시지 초기화
          }
 
+         // 폼 전체 유효성 검사
          if (!form.checkValidity()) {
-            form.classList.add('was-validated'); // 부트스트랩 유효성 클래스 추가
-         } else {
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add('was-validated'); // 부트스트랩 유효성 검증 클래스 추가
+         }
+
+         else {
 
 
             // 유효한 경우 추가 로직 실행 (예: 폼 제출 등)
@@ -132,7 +139,8 @@ $(document).ready(function() {
 });
 
 function shareMessage(idx) {
-   const baseUrl = 'http://localhost:8084'; // 등록된 도메인
+   // const baseUrl = 'http://localhost:8084'; // 등록된 도메인
+   const baseUrl = 'http://happy-newyears.kro.kr';
    const fullUrl = `${baseUrl}/${idx}`; // 쿼리 파라미터 추가
    console.log(idx);
    console.log(fullUrl);

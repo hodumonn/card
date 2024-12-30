@@ -23,6 +23,11 @@ public class CardController {
     @Autowired
     private CardDAO cardDAO;
 
+    @RequestMapping(value="/favicon.ico")
+    @ResponseBody
+    public void returnNoFavicon(){
+
+    }
     /**
      * 메인 (카드 확인) 화면
      * @return
