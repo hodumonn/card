@@ -71,6 +71,45 @@
                             </div>
                         </div>
                     </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-4 mb-2">
+                                <img src="<c:url value='/img/img7.png' />" class="img-thumbnail" alt="Image 4" onclick="selectImage(this)">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="<c:url value='/img/img8.png' />" class="img-thumbnail" alt="Image 5" onclick="selectImage(this)">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="<c:url value='/img/img9.png' />" class="img-thumbnail" alt="Image 6" onclick="selectImage(this)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-4 mb-2">
+                                <img src="<c:url value='/img/img10.png' />" class="img-thumbnail" alt="Image 4" onclick="selectImage(this)">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="<c:url value='/img/img11.png' />" class="img-thumbnail" alt="Image 5" onclick="selectImage(this)">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="<c:url value='/img/img12.png' />" class="img-thumbnail" alt="Image 6" onclick="selectImage(this)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-4 mb-2">
+                                <img src="<c:url value='/img/img13.png' />" class="img-thumbnail" alt="Image 4" onclick="selectImage(this)">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="<c:url value='/img/img14.png' />" class="img-thumbnail" alt="Image 5" onclick="selectImage(this)">
+                            </div>
+                            <div class="col-4 mb-2">
+                                <img src="<c:url value='/img/img15.png' />" class="img-thumbnail" alt="Image 6" onclick="selectImage(this)">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- 캐러셀 컨트롤 -->
                 <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">

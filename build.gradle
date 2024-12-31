@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    // 외장 톰켓 사용 시 제거
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation  'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -37,25 +38,28 @@ dependencies {
 
     // MyBatis
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+
+    // tomcat Jasper
+    implementation 'org.apache.tomcat:tomcat-jasper:10.1.30'
 }
 tasks.named('test') {
     useJUnitPlatform()
 }
 // WAR 빌드 설정
-//tasks.named('war') {
-//    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-//    archiveFileName = 'card.war'
-//}
+tasks.named('bootWar') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archiveFileName = 'card.war'
+}
 //
-//tasks.named('bootWar') {
-//    enabled = true
-//    archiveFileName = 'card.war'
-//}
+tasks.named('bootWar') {
+    enabled = true
+    archiveFileName = 'card.war'
+}
 //
 //// bootJar 비활성화 (Spring Boot WAR 빌드 시 사용하지 않음)
-//tasks.named('bootJar') {
-//    enabled = false
-//}
+tasks.named('bootJar') {
+    enabled = false
+}
 //
 //// JAR 빌드 비활성화
 //tasks.named('jar') {
