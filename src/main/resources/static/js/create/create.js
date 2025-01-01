@@ -140,7 +140,7 @@ $(document).ready(function() {
 
 function shareMessage(url) {
    //const baseUrl = 'http://localhost:80'; // 등록된 도메인
-   const baseUrl = 'http://happy-newyears.kro.kr';
+   const baseUrl = 'http://happy-newyears.kro.kr:8080';
    const fullUrl = `${baseUrl}/${url}`; // 쿼리 파라미터 추가
    console.log(url);
    console.log(fullUrl);

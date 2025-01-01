@@ -112,7 +112,7 @@ img {
     display: flex; /* Flexbox로 중앙 정렬 */
     justify-content: center; /* 가로 중앙 정렬 */
     align-items: center; /* 세로 중앙 정렬 */
-    border: 3px solid #007bff; /* 선택된 이미지 강조 */
+    border: 2px solid lightgray; /* 선택된 이미지 강조 */
     border-radius: 8px; /* 선택 영역 둥글게 */
     background-color: #f8f9fa; /* 이미지 영역 배경색 */
     overflow: hidden; /* 이미지 넘칠 경우 숨김 */
@@ -155,8 +155,18 @@ img {
     border-color: #007bff; /* 호버 시 테두리 강조 */
 }
 
+.carousel-control-next {
+    right: -22px;
+}
 
+.carousel-control-prev {
+    left: -25px;
+}
 
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+    filter: brightness(0) saturate(100%) invert(23%) sepia(100%) saturate(7400%) hue-rotate(-15deg) brightness(102%);
+}
 
 
 
